@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"clickedOn",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"clickedOn",
+  "parent":{
+    "name":"Wrapper",
+    "path":"folders/Scripts/Wrapper.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

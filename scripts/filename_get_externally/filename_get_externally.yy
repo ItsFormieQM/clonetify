@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"filename_get_externally",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"filename_get_externally",
+  "parent":{
+    "name":"Wrapper",
+    "path":"folders/Scripts/Wrapper.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

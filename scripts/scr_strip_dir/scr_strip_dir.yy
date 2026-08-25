@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_strip_dir",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_strip_dir",
+  "parent":{
+    "name":"Standard",
+    "path":"folders/Scripts/Standard.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
