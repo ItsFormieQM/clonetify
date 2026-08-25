@@ -1,1 +1,1 @@
-**Spotify Clone I guess cuz im bored.
+# Spotify Clone I guess cuz im bored.
