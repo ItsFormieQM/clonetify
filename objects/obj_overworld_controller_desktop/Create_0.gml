@@ -22,6 +22,7 @@ song_hitbox = [
 	{}
 ]
 song_index = 0
+setting_index = 0
 song_list = scr_scan_sdir()
 // store hitboxes as an array of structs
 audio_controller = [
@@ -38,10 +39,10 @@ _button_names = [
 ]
 
 _settings = [
-	{name: "Use precise numbers: ", truthy: false, x_pos: 320 + 200, y_pos: 150 + 30},
-	{name: "PLACEHOLDER", truthy: false, x_pos: 0, y_pos: 0},
-	
+	{iname: use_float_macro, name: "Use decimals", truthy: global.use_float, x_pos: x_offset, y_pos: 150 + 30},
+	{iname: plh_macro, name: "PLACEHOLDER", truthy: global.plh, x_pos: x_offset, y_pos: 0},
 ]
 
 sel_song = ""
 clear_timer = 0
+sel_sett = ""

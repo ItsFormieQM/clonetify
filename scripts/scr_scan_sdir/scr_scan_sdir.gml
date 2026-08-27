@@ -6,9 +6,9 @@ function scr_scan_sdir() {
     var _search_pattern = game_save_id + "*.*"
     var _file_name = file_find_first(_search_pattern, 0)
     
-    while (_file_name != "") {
+    while _file_name != ""{
 
-        if (_file_name != "." && _file_name != "..") {
+        if _file_name != "." && _file_name != ".." && (filename_ext(_file_name) == ".ogg" || filename_ext(_file_name) == ".mp4") {
 			
             array_push(audio_files, _file_name)
 			
@@ -19,10 +19,7 @@ function scr_scan_sdir() {
     file_find_close()
 	
     if array_length(audio_files) != 0 {
-		
-		
 		return audio_files
-		
 	}
 	else {
 		return ""

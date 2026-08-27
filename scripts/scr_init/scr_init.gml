@@ -6,6 +6,11 @@ function scr_init(){
     global.current_mus_stream = pointer_null
     global.current_mus_playing_file = pointer_null
 	global.song_list = []
+	
+	
+	// settings
+	global.use_float = false
+	global.plh = false
     
     // OS TYPE
     if os_type == os_windows || os_type == os_linux || os_type == os_macosx {
@@ -57,5 +62,6 @@ function scr_init(){
     }
 
     #endregion
+	scr_load_state()
     return true
 }
