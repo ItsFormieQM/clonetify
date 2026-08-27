@@ -37,7 +37,6 @@
   "name":"spotify clone",
   "resources":[
     {"id":{"name":"audio_checker","path":"extensions/audio_checker/audio_checker.yy",},},
-    {"id":{"name":"audio_converter_linux","path":"extensions/audio_converter_linux/audio_converter_linux.yy",},},
     {"id":{"name":"audio_converter","path":"extensions/audio_converter/audio_converter.yy",},},
     {"id":{"name":"fnt_main","path":"fonts/fnt_main/fnt_main.yy",},},
     {"id":{"name":"obj_control_remapper","path":"objects/obj_control_remapper/obj_control_remapper.yy",},},
@@ -45,6 +44,7 @@
     {"id":{"name":"obj_error_handler","path":"objects/obj_error_handler/obj_error_handler.yy",},},
     {"id":{"name":"obj_hider","path":"objects/obj_hider/obj_hider.yy",},},
     {"id":{"name":"obj_overworld_controller_desktop","path":"objects/obj_overworld_controller_desktop/obj_overworld_controller_desktop.yy",},},
+    {"id":{"name":"obj_overworld_controller_mobile","path":"objects/obj_overworld_controller_mobile/obj_overworld_controller_mobile.yy",},},
     {"id":{"name":"obj_parent_bt","path":"objects/obj_parent_bt/obj_parent_bt.yy",},},
     {"id":{"name":"obj_time","path":"objects/obj_time/obj_time.yy",},},
     {"id":{"name":"room_desktop","path":"rooms/room_desktop/room_desktop.yy",},},
@@ -76,6 +76,7 @@
     {"id":{"name":"scr_strip_dir","path":"scripts/scr_strip_dir/scr_strip_dir.yy",},},
     {"id":{"name":"scr_toggle_mus","path":"scripts/scr_toggle_mus/scr_toggle_mus.yy",},},
     {"id":{"name":"scr_toggle_sett","path":"scripts/scr_toggle_sett/scr_toggle_sett.yy",},},
+    {"id":{"name":"scr_truncate_str","path":"scripts/scr_truncate_str/scr_truncate_str.yy",},},
     {"id":{"name":"spr_line_h","path":"sprites/spr_line_h/spr_line_h.yy",},},
     {"id":{"name":"spr_line","path":"sprites/spr_line/spr_line.yy",},},
     {"id":{"name":"spr_playlists","path":"sprites/spr_playlists/spr_playlists.yy",},},

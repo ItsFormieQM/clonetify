@@ -7,6 +7,8 @@ function scr_init(){
     global.current_mus_playing_file = pointer_null
 	global.song_list = []
 	
+	game_set_speed(display_get_frequency(),gamespeed_fps)
+
 	
 	// settings
 	global.use_float = false
@@ -24,7 +26,7 @@ function scr_init(){
     }
     
     #region DLLS/EXTENSIONS
-
+	
     if os_type == os_windows {
         var _dll_path = working_directory + "audio_converter.dll"
     
@@ -63,5 +65,6 @@ function scr_init(){
 
     #endregion
 	scr_load_state()
+	game_set_speed(display_get_frequency(),gamespeed_fps)
     return true
 }

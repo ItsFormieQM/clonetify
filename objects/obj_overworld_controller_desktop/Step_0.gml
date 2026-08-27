@@ -101,7 +101,7 @@ else if keyboard_check_pressed(vk_left) || backward{
 }
 
 song_list = scr_scan_sdir()
-if song_list != "" {
+if array_length(song_list) > 0 {
 	sel_song = song_list[song_index]
 }
 else {

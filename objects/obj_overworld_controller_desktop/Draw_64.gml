@@ -12,8 +12,6 @@ if !opened_settings {
     
     draw_set_halign(fa_left)
     draw_set_valign(fa_left)
-    
-    song_hitbox = []
 	
 	var _max_song_len = 22
 	secnd_part = _max_song_len
@@ -79,9 +77,10 @@ if global.current_mus != pointer_null {
 	}
 	else {
 		draw_text(
-		display_get_width() / 2,
-		room_height - 150,
-		$"Time Elapsed: {time_elapsed_song}s / {time_max_song}s")
+			display_get_width() / 2,
+			room_height - 150,
+			$"Time Elapsed: {time_elapsed_song}s / {time_max_song}s"
+		)
 	}
 	draw_set_halign(fa_left)
 	draw_set_valign(fa_left)

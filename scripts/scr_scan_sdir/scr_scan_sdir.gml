@@ -18,11 +18,12 @@ function scr_scan_sdir() {
     
     file_find_close()
 	
+	array_sort(audio_files,true)
     if array_length(audio_files) != 0 {
 		return audio_files
 	}
 	else {
-		return ""
+		return []
 	}
 	
 }
