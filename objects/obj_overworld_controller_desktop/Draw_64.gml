@@ -26,22 +26,22 @@ if !opened_settings {
 			break
 		}
 	    var _display_text = $"{_idx + 1}: {scr_filter_str(".", song_list[_idx])}"
-	    if song_index == _idx
+	    if song_index == _idx {
 	        draw_set_colour(c_blue)
-	    else if song_list[_idx] == global.current_mus_playing_file
+		}
+	    else if song_list[_idx] == global.current_mus_playing_file {
 	        draw_set_colour(c_yellow)
-	    else
+		}
+	    else {
 	        draw_set_colour(c_white)
-
+		}
+		
 	    draw_text(_item_x, _item_y, _display_text)
 	    draw_set_colour(c_white)
 	}
 
-	if array_length(song_list) >= _max_song_len {
+	if array_length(song_list) - 1 > _max_song_len {
 	    draw_text(x_offset, y_offset + (_max_song_len + 2) * 30, "VV")
-	
-		draw_set_colour(c_white)
-		
 	}
 }
 else {
