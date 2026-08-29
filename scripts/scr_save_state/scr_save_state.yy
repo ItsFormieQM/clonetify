@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_save_state",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_save_state",
+  "parent":{
+    "name":"Standard",
+    "path":"folders/Scripts/Standard.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
