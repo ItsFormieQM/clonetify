@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_flip_str",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_flip_str",
+  "parent":{
+    "name":"Standard",
+    "path":"folders/Scripts/Standard.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

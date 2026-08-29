@@ -4,13 +4,13 @@ if window_get_width() != base_width || window_get_height() != base_height {
 }
 
 if global.current_mus != NULL {
-	time_elapsed_song = audio_sound_get_track_position(global.current_mus)
-	time_max_song = audio_sound_length(global.current_mus)
+	time_elapsed_song = clonetify_get_position()
+	time_max_song = clonetify_get_duration()
 }
 
 if array_length(song_list) > 0 {
 	sel_song = song_list[song_index]
 }
-
+clonetify_scan_dir_async(global.__storage_external)
 
 

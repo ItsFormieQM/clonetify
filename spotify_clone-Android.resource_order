@@ -1,0 +1,7 @@
+{
+  "FolderOrderSettings":[],
+  "ResourceOrderSettings":[
+    {"name":"scr_flip_str","order":2,"path":"scripts/scr_flip_str/scr_flip_str.yy",},
+    {"name":"scr_strip_dir","order":1,"path":"scripts/scr_strip_dir/scr_strip_dir.yy",},
+  ],
+}

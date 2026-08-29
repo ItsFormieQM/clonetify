@@ -32,6 +32,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ExternalFile extends RunnerSocial {
+	
 
     private static final int EVENT_ASYNC_SOCIAL = 70;
 
@@ -836,4 +837,44 @@ public class ExternalFile extends RunnerSocial {
         }
         return result;
     }
+	    /*  BACKGROUND SYSTEM CONTROL  */
+        /*  CLONETIFY NATIVE MEDIA PLAYER STREAM HOOKS  */
+    public void clonetify_play_audio(String _absolute_path) {
+        AndroidStorageControl.playExternalTrack(context, _absolute_path);
+    }
+
+    public void clonetify_stop_audio() {
+        AndroidStorageControl.stopExternalTrack();
+    }
+
+    public void clonetify_pause_audio() {
+        AndroidStorageControl.pauseExternalTrack();
+    }
+
+    public void clonetify_resume_audio() {
+        AndroidStorageControl.resumeExternalTrack();
+    }
+	public double clonetify_get_position() {
+        if (AndroidStorageControl.mediaPlayer != null) {
+            // Returns current position converted to seconds
+            return (double) AndroidStorageControl.mediaPlayer.getCurrentPosition() / 1000.0;
+        }
+        return 0.0;
+    }
+
+    public double clonetify_get_duration() {
+        if (AndroidStorageControl.mediaPlayer != null) {
+            // Returns total duration converted to seconds
+            return (double) AndroidStorageControl.mediaPlayer.getDuration() / 1000.0;
+        }
+        return 0.0;
+    }
+	public double clonetify_is_playing() {
+        return AndroidStorageControl.isExternalTrackPlaying();
+    }
+	    /* ASYNCHRONOUS STORAGE TRACK PARSER CONTAINER */
+    public void clonetify_scan_dir_async(String _path) {
+        AndroidStorageControl.scanDirectoryAsync(_path);
+    }
+
 }

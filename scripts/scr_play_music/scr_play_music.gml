@@ -1,41 +1,35 @@
 function play_mus(mus = noone){
-	
-    if mus == noone || !is_string(mus) {
+	global.current_mus = mus; 
+    global.current_mus_stream = mus;
+    if (mus == noone || !is_string(mus)) {
         return -1;
     }
 
-	var _saf_dir = global.__storage_external + "/"
+    var _saf_dir = global.__storage_external + "/";
     var proper_mus = filename_change_ext(mus, ".ogg");
     
-    if !string_starts_with(proper_mus, game_save_id) {
+    if (!string_starts_with(proper_mus, game_save_id)) {
         proper_mus = _saf_dir + proper_mus; 
     }
    
-    if file_exists(proper_mus) {
-        if variable_global_exists("current_mus") {
-            if is_real(global.current_mus) {
-                if audio_is_playing(global.current_mus) {
-                    audio_stop_sound(global.current_mus);
-                }
-            }
-        }
-        
-        audio_stop_all();
+    // Stop any music playing natively inside GameMaker's engine
+    audio_stop_all();
 
-        if variable_global_exists("current_mus_stream") && global.current_mus_stream != pointer_null {
-            audio_destroy_stream(global.current_mus_stream);
-            global.current_mus_stream = pointer_null;
-        }
+    // 1. Tell your Java extension layer to stop the previous MediaPlayer track
+    clonetify_stop_audio();
 
-        var _mus = audio_create_stream(proper_mus);
-        global.current_mus_stream = _mus;
-        global.current_mus = audio_play_sound(_mus, 67, true);
-        
-        if instance_exists(obj_overworld_controller) {
-            obj_overworld_controller.time_max_song = 0;
-        }
+    // 2. Clear old GML audio trackers so your step event doesn't crash on undefined values
+    
+
+    // 3. Play the absolute external path directly using Android's core MediaPlayer
+    // (Bypasses GameMaker's sandboxed file_exists check and asset hijacking entirely!)
+    clonetify_play_audio(string(proper_mus));
+    
+    // 4. Safely query your new extension tracker to update your UI duration fields
+    if (instance_exists(obj_overworld_controller)) {
+        obj_overworld_controller.time_max_song = clonetify_get_duration();
+        obj_overworld_controller.time_elapsed_song = 0;
     }
-    else {
-    }
-	global.current_mus_playing_file = proper_mus
+
+    global.current_mus_playing_file = proper_mus;
 }

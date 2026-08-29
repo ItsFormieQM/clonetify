@@ -31,7 +31,7 @@ if !opened_settings{
 		"SONG LIST"
 	)
 	draw_text(
-		room_width - x_offset - 380,
+		room_width - x_offset - 370,
 		y_offset - 90,
 		"PLAYLISTS"
 	)
@@ -59,26 +59,20 @@ if !opened_settings{
 						down_click = true
 						break
 					case "Play":
-						play = true
-						
+						if array_length(song_list) > 0 {
+							play = true
+						}
 						break
 					case "Pause":
 						pause = !pause
-						if global.current_mus != NULL {
+						if array_length(song_list) > 0 {
 							if pause {
-								audio_pause_sound(global.current_mus)
+								clonetify_pause_audio()
 								
 							}
 							else {
-								if audio_is_paused(global.current_mus) {
-									audio_resume_sound(global.current_mus)
-								}
+								clonetify_resume_audio()
 							}
-						}
-						else {
-							intent_saf_request(1)
-							show_debug_message(game_save_id)
-							show_debug_message(saf_directory_create("/", "TEST"))
 						}
 						break
 					default:
@@ -100,12 +94,13 @@ if !opened_settings{
 	for (var i = 0; i < array_length(song_list); i ++) {
 		var scale = 0.7
 		
-		if song_index == i {
-			draw_set_colour(c_blue)	
-		}	
+		
 		if global.current_mus == song_list[i] {
 			draw_set_colour(c_yellow)
 		}
+		if song_index == i {
+			draw_set_colour(c_blue)	
+		}	
 		draw_text_ext_transformed(
 			x_offset + 115,
 			(y_offset + i * 30) - 40,
@@ -144,7 +139,7 @@ else if play {
 	}
 	else {
 		pause = false
-		audio_resume_sound(global.current_mus)
+		clonetify_resume_audio()
 	}
 	play = false
 	exit

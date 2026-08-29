@@ -47,11 +47,7 @@ song_list = []
 x_offset = 120
 y_offset = 120
 song_list = []
-var file = json_decode(saf_directory_get_contents("/"))
-var file_len = real(file[? "file_length"])
-for (var i = 0; i < file_len; i++) {
-	if string_ends_with(file[? "file_" + string(i)],".ogg") {
-		array_push(song_list,file[? "file_"+ string(i)])
-	}
-}	
-ds_map_destroy(file)
+timer = 0
+max_timer = gamespeed_fps * 60
+test = []
+global.music_playable_paths = []

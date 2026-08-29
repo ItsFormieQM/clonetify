@@ -22,6 +22,7 @@ function scr_init(){
     else if os_type == os_android || os_type == os_ios {
 		
 	    global.osflavors = Mobile
+		
 	}
     else {
         global.osflavors = pointer_null
