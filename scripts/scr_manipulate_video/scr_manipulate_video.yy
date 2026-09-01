@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"scr_play_video",
+  "%Name":"scr_manipulate_video",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scr_play_video",
+  "name":"scr_manipulate_video",
   "parent":{
-    "name":"Standard",
-    "path":"folders/Scripts/Standard.yy",
+    "name":"spotify_clonePC",
+    "path":"spotify_clonePC.yyp",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

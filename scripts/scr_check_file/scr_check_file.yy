@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"scr_check_file",
   "parent":{
-    "name":"spotify clone",
-    "path":"spotify clone.yyp",
+    "name":"spotify_clonePC",
+    "path":"spotify_clonePC.yyp",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

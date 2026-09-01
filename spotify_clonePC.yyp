@@ -1,6 +1,6 @@
 {
   "$GMProject":"v1",
-  "%Name":"spotify clone",
+  "%Name":"spotify_clonePC",
   "AudioGroups":[
     {"$GMAudioGroup":"v1","%Name":"audiogroup_default","exportDir":"","name":"audiogroup_default","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
   ],
@@ -25,15 +25,13 @@
     {"$GMFolder":"","%Name":"Sprites","folderPath":"folders/Sprites.yy","name":"Sprites","resourceType":"GMFolder","resourceVersion":"2.0",},
   ],
   "ForcedPrefabProjectReferences":[],
-  "IncludedFiles":[
-    {"$GMIncludedFile":"","%Name":"file_mover_ext.dll","CopyToMask":-1,"filePath":"datafiles","name":"file_mover_ext.dll","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
-  ],
+  "IncludedFiles":[],
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
     "IDEVersion":"2026.0.0.16",
   },
-  "name":"spotify clone",
+  "name":"spotify_clonePC",
   "resources":[
     {"id":{"name":"audio_checker","path":"extensions/audio_checker/audio_checker.yy",},},
     {"id":{"name":"audio_converter","path":"extensions/audio_converter/audio_converter.yy",},},
@@ -46,6 +44,7 @@
     {"id":{"name":"obj_overworld_controller_desktop","path":"objects/obj_overworld_controller_desktop/obj_overworld_controller_desktop.yy",},},
     {"id":{"name":"obj_parent_bt","path":"objects/obj_parent_bt/obj_parent_bt.yy",},},
     {"id":{"name":"obj_time","path":"objects/obj_time/obj_time.yy",},},
+    {"id":{"name":"obj_video_drawer","path":"objects/obj_video_drawer/obj_video_drawer.yy",},},
     {"id":{"name":"room_desktop","path":"rooms/room_desktop/room_desktop.yy",},},
     {"id":{"name":"room_init","path":"rooms/room_init/room_init.yy",},},
     {"id":{"name":"room_mobile","path":"rooms/room_mobile/room_mobile.yy",},},
@@ -66,9 +65,9 @@
     {"id":{"name":"scr_init","path":"scripts/scr_init/scr_init.yy",},},
     {"id":{"name":"scr_load_state","path":"scripts/scr_load_state/scr_load_state.yy",},},
     {"id":{"name":"scr_manipulate_song","path":"scripts/scr_manipulate_song/scr_manipulate_song.yy",},},
+    {"id":{"name":"scr_manipulate_video","path":"scripts/scr_manipulate_video/scr_manipulate_video.yy",},},
     {"id":{"name":"scr_move_from_dir","path":"scripts/scr_move_from_dir/scr_move_from_dir.yy",},},
     {"id":{"name":"scr_play_music","path":"scripts/scr_play_music/scr_play_music.yy",},},
-    {"id":{"name":"scr_play_video","path":"scripts/scr_play_video/scr_play_video.yy",},},
     {"id":{"name":"scr_remove_char","path":"scripts/scr_remove_char/scr_remove_char.yy",},},
     {"id":{"name":"scr_save_state","path":"scripts/scr_save_state/scr_save_state.yy",},},
     {"id":{"name":"scr_scan_sdir","path":"scripts/scr_scan_sdir/scr_scan_sdir.yy",},},
@@ -77,7 +76,6 @@
     {"id":{"name":"scr_toggle_mus","path":"scripts/scr_toggle_mus/scr_toggle_mus.yy",},},
     {"id":{"name":"scr_toggle_sett","path":"scripts/scr_toggle_sett/scr_toggle_sett.yy",},},
     {"id":{"name":"scr_truncate_str","path":"scripts/scr_truncate_str/scr_truncate_str.yy",},},
-    {"id":{"name":"Script29","path":"scripts/Script29/Script29.yy",},},
     {"id":{"name":"spr_line_h","path":"sprites/spr_line_h/spr_line_h.yy",},},
     {"id":{"name":"spr_line","path":"sprites/spr_line/spr_line.yy",},},
     {"id":{"name":"spr_playlists","path":"sprites/spr_playlists/spr_playlists.yy",},},

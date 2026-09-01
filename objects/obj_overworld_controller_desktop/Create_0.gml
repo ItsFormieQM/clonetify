@@ -42,8 +42,9 @@ _button_names = [
 ]
 
 _settings = [
-	{iname: use_float_macro, name: "Use decimals", truthy: global.use_float, x_pos: x_offset, y_pos: 150 + 30},
-	{iname: allow_folder_conversion_macro, name: "Use external folder to import", truthy: global.allow_folder_conversion, x_pos: x_offset, y_pos: 150 + 60},
+	{iname: use_float_macro, name: "Use Decimals", truthy: global.use_float, x_pos: x_offset, y_pos: 150 + 30},
+	{iname: allow_folder_conversion_macro, name: "Use External Folder To Import", truthy: global.allow_folder_conversion, x_pos: x_offset, y_pos: 150 + 60},
+	{iname: video_play_macro, name: "Use Videos", truthy: global.use_video, x_pos: x_offset, y_pos: 150 + 90},
 	{iname: plh_macro, name: "PLACEHOLDER", truthy: global.plh, x_pos: x_offset, y_pos: 0},
 ]
 
@@ -52,3 +53,5 @@ clear_timer = 0
 sel_sett = ""
 sent_folder = false
 buffer_ext_path = ""
+sel_vid = ""
+os_powersave_enable(false)

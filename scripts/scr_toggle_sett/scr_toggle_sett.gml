@@ -48,7 +48,19 @@ function scr_toggle_sett(_sett = ""){
 				}
 			}
 			break
+		case video_play_macro:
+			with obj_overworld_controller_desktop {
+				for (var i = 0; i < array_length(_settings); i++) {
+					if _settings[i].iname == video_play_macro {
+						_settings[i].truthy = !_settings[i].truthy
+						global.use_video = _settings[i].truthy
+						break
+					}
+				}
+			}
+			break
 		default:
+			show_debug_message($"NOT VALID SETT: {_sett}")
 			return -2
 	}	
 	return 0

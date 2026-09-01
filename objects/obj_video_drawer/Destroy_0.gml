@@ -1,0 +1,1 @@
+obj_overworld_controller_desktop.pause = false

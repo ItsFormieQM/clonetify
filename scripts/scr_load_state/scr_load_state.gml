@@ -16,6 +16,8 @@ function scr_load_state(){
 	file_text_readln(_file)
 	global.sandbox = file_text_read_real(_file)
 	file_text_readln(_file)
+	global.use_video = file_text_read_real(_file)
+	file_text_readln(_file)
 	global.plh = file_text_read_real(_file)
 	file_text_readln(_file)
 }

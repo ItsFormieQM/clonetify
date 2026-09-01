@@ -6,5 +6,6 @@ function macros(){
 	#macro use_float_macro "song_float"
 	#macro allow_folder_conversion_macro "folder_use"
 	#macro sandbox_macro "on_sandbox"
+	#macro video_play_macro "use_video"
 	#macro plh_macro "plh"
 }

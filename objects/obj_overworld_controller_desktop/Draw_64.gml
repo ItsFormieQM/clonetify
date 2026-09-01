@@ -3,9 +3,9 @@ draw_self()
 var _dsettings = draw_get_settings()
 draw_set_font(fnt_main)
 draw_set_colour(c_white)
-draw_text(72,20,"Playlists")
+draw_text(72,20,"PLAYLISTS")
 
-if !opened_settings {
+if !opened_settings && !global.use_video {
     draw_set_halign(fa_center)
     draw_set_valign(fa_center)
     draw_text(room_width / 2, 80, "SONG LIST")
@@ -40,6 +40,43 @@ if !opened_settings {
 
 	if array_length(song_list) - 1 > _max_song_len {
 	    draw_text(x_offset, y_offset + (_max_song_len + 2) * 30, "VV")
+	}
+}
+else if !opened_settings && global.use_video {
+	draw_set_halign(fa_center)
+    draw_set_valign(fa_center)
+    draw_text(room_width / 2, 80, "VIDEO LIST")
+    
+    draw_set_halign(fa_left)
+    draw_set_valign(fa_left)
+	var vid_list = scr_scan_sdir(true)
+	var _max_vid_len = 22
+	secnd_part = _max_vid_len
+    
+	for (var i = 0; i <= _max_vid_len; i++) {
+	    var _item_x = x_offset
+	    var _item_y = y_offset + i * 30
+	    var _idx = song_index > _max_vid_len ? _max_vid_len + i + 1: i
+	    if _idx >= array_length(vid_list) {
+			break
+		}
+	    var _display_text = $"{_idx + 1}. {scr_filter_str(".", vid_list[_idx])}"
+	    if song_index == _idx {
+	        draw_set_colour(c_blue)
+		}
+	    else if song_list[_idx] == global.current_mus_playing_file {
+	        draw_set_colour(c_yellow)
+		}
+	    else {
+	        draw_set_colour(c_white)
+		}
+		
+	    draw_text(_item_x, _item_y, _display_text)
+	    draw_set_colour(c_white)
+	}
+
+	if array_length(song_list) - 1 > _max_vid_len {
+	    draw_text(x_offset, y_offset + (_max_vid_len + 2) * 30, "VV")
 	}
 }
 else {
@@ -116,9 +153,15 @@ if global.current_mus != pointer_null {
 		if _hover {
 			hover = true
 			draw_set_colour(c_yellow)
-			if global.l_click && global.current_mus_stream != pointer_null {
+			if global.l_click && (global.current_mus_stream != pointer_null || global.vid_playing != pointer_null) {
 				pause = !pause
 				scr_toggle_mus(pause)
+				if pause {
+					video_pause()
+				}
+				else {
+					video_resume()
+				}
 			}
 		} 
 		else {
@@ -198,7 +241,7 @@ if global.current_mus != pointer_null {
 	
 	#region for loop truthy or falsy
 	_old_sett = draw_get_settings()
-	if global.osflavors != pointer_null {
+	if global.osflavors != pointer_null || global.vid_playing != pointer_null{
 		var button_names = audio_controller
 		draw_set_halign(fa_center)
 		draw_set_valign(fa_center)
@@ -217,7 +260,7 @@ if global.current_mus != pointer_null {
 		if _hover {
 			hover = true
 			draw_set_colour(c_yellow)
-			if global.l_click && global.current_mus_stream != pointer_null {
+			if global.l_click && (global.current_mus_stream != pointer_null || global.vid_playing != pointer_null) {
 				loop = !loop
 				scr_toggle_mus_loop(loop)
 			}
@@ -250,7 +293,7 @@ if global.current_mus != pointer_null {
 	
 	#region for forward
 	_old_sett = draw_get_settings()
-	if global.osflavors != pointer_null {
+	if global.osflavors != pointer_null || global.vid_playing != pointer_null{
 		var button_names = audio_controller
 		draw_set_halign(fa_center)
 		draw_set_valign(fa_center)
@@ -269,7 +312,7 @@ if global.current_mus != pointer_null {
 		if _hover {
 			hover = true
 			draw_set_colour(c_yellow)
-			if global.l_click && global.current_mus_stream != pointer_null {
+			if global.l_click && (global.current_mus_stream != pointer_null || global.vid_playing != pointer_null) {
 				forward = true
 			}
 		} 

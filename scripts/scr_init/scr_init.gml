@@ -6,6 +6,7 @@ function scr_init(){
     global.current_mus_stream = pointer_null
     global.current_mus_playing_file = pointer_null
 	global.song_list = []
+	global.vid_playing = pointer_null
 	
 	game_set_speed(display_get_frequency(),gamespeed_fps)
 
@@ -16,7 +17,8 @@ function scr_init(){
 	global.allow_folder_conversion = false
 	global.ext_path = ""
 	global.sandbox = false
-    
+    global.use_video = false
+	
     // OS TYPE
     if os_type == os_windows || os_type == os_linux || os_type == os_macosx {
         global.osflavors = PC

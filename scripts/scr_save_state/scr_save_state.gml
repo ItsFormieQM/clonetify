@@ -16,6 +16,8 @@ function scr_save_state(){
 	file_text_writeln(_file)
 	file_text_write_real(_file,global.sandbox)
 	file_text_writeln(_file)
+	file_text_write_real(_file,global.use_video)
+	file_text_writeln(_file)
 	file_text_write_real(_file,global.plh)
 	file_text_writeln(_file)
 	
