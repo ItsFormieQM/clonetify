@@ -1,1 +1,3 @@
 # Spotify Clone I guess cuz im bored.
+
+FUTURE FORMER HERE, HOLY SH** PLS DO NOT USE. THERES A POSSIBLE MEMORY LEAK
